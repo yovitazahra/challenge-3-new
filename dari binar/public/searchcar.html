@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binar Rental Car</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- CSS -->
+    <link href="./css/style.css" rel="stylesheet" />
+</head>
+
+<style>
+    button.hero-btn{
+        display: none;
+    }
+    .container-1{
+        position: absolute;
+    }
+</style>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <div id="nav-placeholder"></div>
+        <script>
+            $.get("partial/navbar.html", function(data){
+                $("#nav-placeholder").replaceWith(data);
+            });
+  
+        </script> 
+  
+      </header>
+  
+      <div class="container-1">
+  
+        <section id="car-show">
+  
+          <div id="car-placeholder"></div>
+          <script>
+              $.get("partial/car-show.html", function(data){
+                  $("#car-placeholder").replaceWith(data);
+              });
+    
+          </script> 
+        </section>
+      </div>
+      
+      <div class="filter-section">
+        <div class="gap">
+        <div class="white-box">
+            <div class="driver-type">
+                <p>Tipe Driver</p>
+                <select name="" id="driver-option">
+                    <option value="">--Pilih Tipe Driver--</option>
+                    <option value="">Dengan Sopir</option>
+                    <option value="">Tanpa Sopir (Lepas Kunci)</option>
+                </select>
+        </div>
+
+            <div class="date">
+                <p>Tanggal</p>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+
+            <div class="pick-up-time">
+                <p>Waktu Jemput/Ambil</p>
+                <select name="" id="date-option">
+                    <option value="">--Pilih Waktu--</option>
+                    <option value="">08.00 WIB</option>
+                    <option value="">09.00 WIB</option>
+                    <option value="">10.00 WIB</option>
+                    <option value="">11.00 WIB</option>
+                    <option value="">12.00 WIB</option>
+
+                </select>
+            </div>
+
+            <div class="passenger">
+                <p>Jumlah Penumpang (optional)</p>
+                <input type="text" id="fname" placeholder="Jumlah Penumpang">
+                <div class="content"></div>
+            </div>
+
+            <button type="button" class="mulai-cari-btn" >Cari Mobil</button>
+
+        </div>
+        </div>
+      </div>
+    <!-- Footer Section -->
+    <div id="footer-placeholder"></div>
+    <script>
+        $.get("partial/footer.html", function(data){
+            $("#footer-placeholder").replaceWith(data);
+        });
+
+    </script> 
+</body>
+</html>
